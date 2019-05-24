@@ -1,0 +1,6 @@
+* show table
+describe employee_pay_tst;
+show columns from employee_pay_tst;
+* show constraints
+show create table employee_pay_tst;
+select * from information_schema.table_constraints where table_schema=schema() and table_name='employee_pay_tst';
