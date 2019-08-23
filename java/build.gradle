@@ -18,14 +18,19 @@ repositories {
     // Use jcenter for resolving your dependencies.
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
+    mavenCentral()
 }
 
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     implementation 'com.google.guava:guava:27.0.1-jre'
 
+    implementation 'org.slf4j:slf4j-api:1.7.26'
+    implementation 'org.slf4j:slf4j-simple:1.7.26'
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+    compileOnly 'org.projectlombok:lombok:1.18.8'
+	annotationProcessor 'org.projectlombok:lombok:1.18.8'
 }
 
 // Define the main class for the application
@@ -43,6 +48,33 @@ task run_ListDir(dependsOn: 'classes', type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
 
     main = 'io.github.chophi.learnjava.ListDir'
+    // arguments to pass to the application
+    // args ''
+}
+task run_TryStream(dependsOn: 'classes', type: JavaExec) {
+    description = 'run main for io/github/chophi/learnjava/TryStream.java'
+    classpath = sourceSets.main.runtimeClasspath
+
+    main = 'io.github.chophi.learnjava.TryStream'
+    // arguments to pass to the application
+    // args ''
+}
+
+
+task run_TryLombok(dependsOn: 'classes', type: JavaExec) {
+    description = 'run main for io/github/chophi/learnjava/TryLombok.java'
+    classpath = sourceSets.main.runtimeClasspath
+
+    main = 'io.github.chophi.learnjava.TryLombok'
+    // arguments to pass to the application
+    // args ''
+}
+
+task run_TrySLF4J(dependsOn: 'classes', type: JavaExec) {
+    description = 'run main for io/github/chophi/learnjava/TrySLF4J.java'
+    classpath = sourceSets.main.runtimeClasspath
+
+    main = 'io.github.chophi.learnjava.TrySLF4J'
     // arguments to pass to the application
     // args ''
 }
